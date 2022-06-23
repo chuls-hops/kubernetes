@@ -30,7 +30,10 @@ sudo apt-get -y update
 ```
 ```
 sudo apt-get install -y kubelet kubeadm kubectl
+
+sudo apt-get install -y kubelet=1.19.15-00 kubeadm=1.19.15-00 kubectl=1.19.15-00
 ```
+
 ```
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
