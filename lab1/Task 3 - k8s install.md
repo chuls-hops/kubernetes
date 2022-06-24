@@ -29,9 +29,12 @@ apt 패키지 색인을 업데이트하고, kubelet, kubeadm, kubectl을 설치�
 sudo apt-get -y update
 ```
 ```
+### docker는 kubernetes 1.24 이하에서 동작.
+### calico는 v3.23 에서 kubernetes 1.21, 1.22, 1.23 에서 동작. 버전을 맞춰서 설치해야함.
+
 sudo apt-get install -y kubelet kubeadm kubectl
 
-sudo apt-get install -y kubelet=1.19.15-00 kubeadm=1.19.15-00 kubectl=1.19.15-00
+sudo apt-get install -y kubelet=1.22.11-00 kubeadm=1.22.11-00 kubectl=1.22.11-00
 ```
 
 ```
@@ -44,7 +47,7 @@ systemctl enable --now kubelet
 2. kubeadm 초기화
 
 ```
-kubeadm init --pod-network-cidr=172.16.0.0/16 \
+kubeadm init --pod-network-cidr=192.168.0.0/16 \
 --apiserver-advertise-address=<Master IP>
 ```
 출력결과(kubeadm join 이하 명령어)는 다른 노드를 클러스터에 연동할 때 사용하는 명령어 입니다.(worker node 연동)
