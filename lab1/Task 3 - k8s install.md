@@ -64,7 +64,10 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 4. Calico 네트워크 플러그인 설치
 ```
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+###### - kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml # 이전내용으로 미적용 필요
+kubectl create -f https://projectcalico.docs.tigera.io/manifests/tigera-operator.yaml
+kubectl create -f https://projectcalico.docs.tigera.io/manifests/custom-resources.yaml
+
 ```
 ![image](https://user-images.githubusercontent.com/92773629/137878112-476a8d5f-9399-46a9-acaa-5be0a5c0af84.png)
 
